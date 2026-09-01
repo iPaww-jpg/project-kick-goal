@@ -79,14 +79,14 @@ fetch(api)
                     detail.appendChild(harga)
 
                     // Container pengaturan quantity (tombol tambah/kurang)
-                    let qty_hitung = document.createElement('div')
-                    qty_hitung.classList.add('qty')
-                    detail.appendChild(qty_hitung)
+                    let qtyHitung = document.createElement('div')
+                    qtyHitung.classList.add('qty')
+                    detail.appendChild(qtyHitung)
 
                     // Label "Quantity :"
                     let ket = document.createElement('div')
                     ket.classList.add('ket')
-                    qty_hitung.appendChild(ket)
+                    qtyHitung.appendChild(ket)
                     let isiKet = document.createElement('p')
                     isiKet.textContent = "Quantity : "
                     ket.appendChild(isiKet)
@@ -94,7 +94,7 @@ fetch(api)
                     // Container tombol +, angka qty, dan tombol -
                     let tombol = document.createElement('div')
                     tombol.classList.add('tombol')
-                    qty_hitung.appendChild(tombol)
+                    qtyHitung.appendChild(tombol)
 
                     // Tombol tambah quantity
                     let tambah = document.createElement('button')
@@ -102,9 +102,9 @@ fetch(api)
                     tombol.appendChild(tambah)
 
                     // Tampilan angka quantity saat ini
-                    let qty_hasil = document.createElement('p')
-                    qty_hasil.textContent = qty[index]
-                    tombol.appendChild(qty_hasil)
+                    let qtyHasil = document.createElement('p')
+                    qtyHasil.textContent = qty[index]
+                    tombol.appendChild(qtyHasil)
 
                     // Tombol kurangi quantity
                     let kurang = document.createElement('button')
@@ -126,7 +126,7 @@ fetch(api)
                     // lalu hitung ulang total keseluruhan pesanan
                     tambah.onclick = function () {
                         qty[index]++;
-                        qty_hasil.textContent = qty[index];
+                        qtyHasil.textContent = qty[index];
                         updateSubtotalKartu();
                         hitungTotalSemua();
                     }
@@ -136,7 +136,7 @@ fetch(api)
                     kurang.onclick = function () {
                         if (qty[index] > 1) {
                             qty[index]--;
-                            qty_hasil.textContent = qty[index];
+                            qtyHasil.textContent = qty[index];
                             updateSubtotalKartu();
                             hitungTotalSemua();
                         }

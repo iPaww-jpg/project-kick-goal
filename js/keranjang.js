@@ -118,9 +118,8 @@ fetch(api)
             let checked = this.checked;
 
             semuaCheckbox.forEach(checkbox => {
-                // Jalankan ulang logika pilih produk untuk tiap checkbox, seolah-olah diklik manual
-                pilihProduk.call(checkbox);
-                checkbox.checked = checked;
+                checkbox.checked = checked;   
+                pilihProduk.call(checkbox); 
             });
 
             select.checked = checked;

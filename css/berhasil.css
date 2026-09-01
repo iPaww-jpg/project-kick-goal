@@ -89,7 +89,7 @@ body {
 }
 
 /* Baris nama, WhatsApp, email — disusun sejajar dengan ikon di kirinya */
-.namaUsr,
+.nama-user,
 .wa,
 .email {
   display: flex;

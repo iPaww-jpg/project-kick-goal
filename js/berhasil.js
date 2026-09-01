@@ -116,7 +116,7 @@ fetch(api)
         }
 
         // Tampilkan data pengiriman user (nama, WA, email, alamat) di halaman
-        let namaUser = document.getElementById('namaUsr')
+        let namaUser = document.getElementById('nama-user')
         namaUser.textContent = user.nama
         let whatsappUser = document.getElementById('whatsapp')
         whatsappUser.textContent = user.whatsapp
