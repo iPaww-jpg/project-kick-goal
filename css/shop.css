@@ -246,6 +246,10 @@
         top: 1.2vw;
     }
 
+    .filter{
+        margin-bottom: 5vw;
+    }
+
     .filter-merk button {
         font-size: 2.5vw;
         margin-top: 2vw;
