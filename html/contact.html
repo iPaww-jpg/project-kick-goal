@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman contact -->
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (desktop) -->
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li id="hide"><a href="../index.html">HOME</a></li>
+                <li id="hide"><a href="shop.html">SHOP</a></li>
+                <li id="hide"><a href="about.html">ABOUT</a></li>
+                <li id="hide" class="on"><a href="contact.html">CONTACT</a></li>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang belanja + badge jumlah item (diisi via JS) -->
+                <li>
+                    <a href="keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar bawah, khusus tampilan mobile -->
+    <nav class="bottom">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="material-symbols-outlined">home</span><br>
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    <span class="material-symbols-outlined">storefront</span><br>
+                    SHOP
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    <span class="material-symbols-outlined">info</span><br>
+                    ABOUT
+                </a>
+            </li>
+
+            <!-- Menu CONTACT ditandai aktif karena ini halaman aktif saat ini -->
+            <li class="on">
+                <a href="contact.html">
+                    <span class="material-symbols-outlined">contact_page</span><br>
+                    CONTACT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Konten utama halaman contact -->
+    <div class="contact">
+        <!-- Judul & pengantar halaman -->
+        <div class="atas">
+            <h1>CONTACT</h1>
+            <p>LET'S CONNECT</p>
+            <small>Have questions? We're here to help. Reach out through any of our channels.</small>
+        </div>
+        <!-- Daftar informasi kontak: WhatsApp, email, Instagram, lokasi -->
+        <div class="kontak">
+            <div class="satu">
+                <div class="info">
+                    <p class="jdl">WHATSAPP</p>
+                    <p>+62 831-3083-5478</p>
+                </div>
+                <div class="info">
+                    <p class="jdl">EMAIL</p>
+                    <p>kickgoal@gmail.com</p>
+
+                </div>
+            </div>
+            <div class="dua">
+                <div class="info">
+                    <p class="jdl">INSTAGRAM</p>
+                    <p>@kickgoal-1933</p>
+                </div>
+                <div class="info">
+                    <p class="jdl">LOCATION</p>
+                    <p>Bandung, Indonesia</p>
+                </div>
+            </div>
+            <!-- Logo dekoratif di section kontak -->
+            <img src="/KICK & GOAL/logo_saja.png" alt="">
+        </div>
+        <!-- Teks penutup/ajakan di bagian bawah section contact -->
+        <p>NEED HELP?</p>
+        <p>WE'RE HERE FOR YOUR GAME</p>
+    </div>
+
+    <!-- Footer: logo, slogan, menu navigasi, sosial media, dan copyright -->
+    <footer>
+        <div class="foto">
+            <img src="/KICK & GOAL/logo_tulisan_bawah.png" alt="">
+        </div>
+        <div class="slogan">
+            <p>ELEVATE YOUR GAME</p>
+            <small>Premium futsal footwear engineered for every move.</small>
+        </div>
+        <div class="fot-menu">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="medsos">
+            <P>Follow Us :</P>
+            <ul>
+                <li><a href="https://wa.me/6283130835478" target="_blank">WHATSAPP</a></li>
+                <li><a href="https://tiktok.com/@ipww__" target="_blank">TIKTOK</a></li>
+                <li><a href="https://instagram.com/ipaww__" target="_blank">INSTAGRAM</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+
+</body>
+
+</html>

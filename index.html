@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kick Goal</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman home/index -->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (desktop) -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <!-- Menu HOME ditandai "on" karena ini halaman aktif saat ini -->
+                <li id="hide" class="on"><a href="../home.html">HOME</a></li>
+                <li id="hide"><a href="html/shop.html">SHOP</a></li>
+                <li id="hide"><a href="html/about.html">ABOUT</a></li>
+                <li id="hide"><a href="html/contact.html">CONTACT</a></li>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang belanja + badge jumlah item (diisi via JS) -->
+                <li>
+                    <a href="html/keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar bawah, khusus tampilan mobile -->
+    <nav class="bottom">
+        <ul>
+            <!-- Menu HOME ditandai aktif -->
+            <li class="on">
+                <a href="home.html">
+                    <span class="material-symbols-outlined">home</span><br>
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="html/shop.html">
+                    <span class="material-symbols-outlined">storefront</span><br>
+                    SHOP
+                </a>
+            </li>
+
+            <li>
+                <a href="html/about.html">
+                    <span class="material-symbols-outlined">info</span><br>
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="html/contact.html">
+                    <span class="material-symbols-outlined">contact_page</span><br>
+                    CONTACT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Section hero: judul, tagline, deskripsi, dan gambar sepatu utama -->
+    <section class="hero">
+        <div class="menu-utama">
+            <div class="judul">
+                <p>COLLECTION KICK GOAL - EDITION 1933</p>
+            </div>
+            <div class="sambutan">
+                <p>Gear Up With the Right Shoes and Level Up Your Game.</p>
+            </div>
+            <div class="kata-kata">
+                <p>Your game deserves the right shoes. At KICK GOAL, discover high-performance futsal footwear designed
+                    to deliver the comfort, confidence, and control you need to move faster, play harder, and chase
+                    every goal on the court.</p>
+            </div>
+        </div>
+        <div class="menu-kedua">
+            <!-- Gambar sepatu unggulan beserta label "ELITE PERFORMANCE" & "SIGNATURE SERIES" -->
+            <div class="isinya">
+                <img src="/KICK & GOAL/sepatu_gold_pattern.png" alt="">
+                <div class="kahiji">
+                    <p>ELITE PERFORMANCE</p>
+                </div>
+                <div class="kadua">
+                    <p>SIGNATURE SERIES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section caption: kutipan/slogan brand -->
+    <section class="caption">
+        <div class="utama">
+            <p>"Gear up with premium futsal shoes built for speed, control, and confidence. Step onto the
+                court, make every move count, and chase every goal with KICK GOAL"</p>
+        </div>
+        <div class="gatau">
+            <p>KICK GOAL - 1933</p>
+        </div>
+    </section>
+
+    <!-- Section produk unggulan (top 3 product) -->
+    <section class="top-tri">
+        <div class="jdl">
+            <p>COLECTION</p>
+            <h1>TOP <span class="kuning">#3</span> PRODUCT</h1>
+        </div>
+        <!-- Container ini diisi otomatis oleh JS (index.js) dengan 3 kartu produk -->
+        <div class="top-product" id="top-product">
+
+        </div>
+    </section>
+
+    <!-- Footer: logo, slogan, menu navigasi, sosial media, dan copyright -->
+    <footer>
+        <div class="foto">
+            <img src="/KICK & GOAL/logo_tulisan_bawah.png" alt="">
+        </div>
+        <div class="slogan">
+            <p>ELEVATE YOUR GAME</p>
+            <small>Premium futsal footwear engineered for every move.</small>
+        </div>
+        <div class="fot-menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="html/shop.html">SHOP</a></li>
+                <li><a href="html/about.html">ABOUT</a></li>
+                <li><a href="html/contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="medsos">
+            <P>Follow Us :</P>
+            <ul>
+                <li><a href="https://wa.me/6283130835478" target="_blank">WHATSAPP</a></li>
+                <li><a href="https://tiktok.com/@ipww__" target="_blank">TIKTOK</a></li>
+                <li><a href="https://instagram.com/ipaww__" target="_blank">INSTAGRAM</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script untuk render produk unggulan ke #top-product -->
+    <script src="/js/index.js"></script>
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+
+</body>
+
+</html>

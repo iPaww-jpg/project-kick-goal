@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman keranjang belanja -->
+    <link rel="stylesheet" href="/css/keranjang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (desktop) -->
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li id="hide"><a href="../index.html">HOME</a></li>
+                <li id="hide"><a href="shop.html">SHOP</a></li>
+                <li id="hide"><a href="about.html">ABOUT</a></li>
+                <li id="hide"><a href="contact.html">CONTACT</a></li>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang ditandai "on" karena ini halaman keranjang aktif saat ini -->
+                <li class="on">
+                    <a href="keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar bawah, khusus tampilan mobile -->
+    <nav class="bottom">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="material-symbols-outlined">home</span><br>
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    <span class="material-symbols-outlined">storefront</span><br>
+                    SHOP
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    <span class="material-symbols-outlined">info</span><br>
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    <span class="material-symbols-outlined">contact_page</span><br>
+                    CONTACT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Section utama halaman keranjang belanja -->
+    <section class="keranjang-container">
+        <div class="judul">
+            <p>YOUR CHART</p>
+        </div>
+        <div class="isi">
+            <!-- Checkbox untuk memilih/centang semua produk sekaligus -->
+            <div class="cek">
+                <input type="checkbox" id="select-all">
+                <label for="check">CHECK ALL</label>
+            </div>
+            <!-- Container daftar produk di keranjang (diisi otomatis via JS/keranjang.js) -->
+            <div class="produk" id="produk">
+            </div>
+            <!-- Ringkasan pesanan: total harga & tombol aksi -->
+            <div class="summary">
+                <p class="order">ORDER SUMMARY</p>
+                <div class="total">
+                    <p>Total</p>
+                    <!-- Nominal total diisi otomatis via JS sesuai produk yang dicentang -->
+                    <p class="nominal"></p>
+                </div>
+                <!-- Tombol checkout, hanya aktif kalau ada produk yang dicentang -->
+                <a href="" id="bayar">CHECKOUT</a>
+                <!-- Tombol untuk menghapus produk yang dicentang dari keranjang -->
+                <a href="" id="hapus">REMOVE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container notifikasi pop-up -->
+    <div id="notif"></div>
+
+
+    <!-- Footer: logo, slogan, menu navigasi, sosial media, dan copyright -->
+    <footer>
+        <div class="foto">
+            <img src="/KICK & GOAL/logo_tulisan_bawah.png" alt="">
+        </div>
+        <div class="slogan">
+            <p>ELEVATE YOUR GAME</p>
+            <small>Premium futsal footwear engineered for every move.</small>
+        </div>
+        <div class="fot-menu">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="medsos">
+            <P>Follow Us :</P>
+            <ul>
+                <li><a href="https://wa.me/6283130835478" target="_blank">WHATSAPP</a></li>
+                <li><a href="https://tiktok.com/@ipww__" target="_blank">TIKTOK</a></li>
+                <li><a href="https://instagram.com/ipaww__" target="_blank">INSTAGRAM</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script untuk menampilkan produk di keranjang, hitung total, dan hapus produk -->
+    <script src="/js/keranjang.js"></script>
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+</body>
+
+</html>

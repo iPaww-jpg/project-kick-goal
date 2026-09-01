@@ -1,0 +1,192 @@
+/* Reset dasar: menghilangkan margin default browser dan menetapkan font utama untuk semua elemen */
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Section "About": container utama dengan padding besar di atas (untuk ruang navbar), 
+   garis pemisah bawah, warna background & teks dari CSS variable, teks rata tengah */
+.about {
+    padding: 11vw 5vw 5vw;
+    border-bottom: 0.1vw solid var(--line);
+    background-color: var(--bg);
+    color: var(--ink);
+    text-align: center;
+}
+
+/* Judul utama di section About: warna champagne, spasi antar huruf, jarak bawah sebelum konten */
+.about h1 {
+    color: var(--champagne);
+    letter-spacing: 0.2vw;
+    margin-bottom: 3vw;
+}
+
+/* Wrapper isi (gambar + teks): flexbox agar gambar & teks sejajar berdampingan, lebar 80% dan center */
+.isi {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+/* Container gambar utama: mengambil 90% lebar dari .isi */
+.pic {
+    width: 90%;
+}
+
+/* Gambar di dalam .pic: full width dari container, diberi jarak kiri agar tidak terlalu mepet teks */
+.pic img {
+    width: 100%;
+    margin-left: 2vw;
+}
+
+/* Blok teks/kata-kata di samping gambar: rata kiri, ada padding kiri sebagai jarak dari gambar */
+.kata-kata {
+    text-align: left;
+    padding-left: 5vw;
+}
+
+/* Sub-judul di dalam blok kata-kata */
+.kata-kata h3 {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+/* Paragraf teks di blok kata-kata */
+.kata-kata p {
+    font-size: 1.3vw;
+    margin-bottom: 1vw;
+}
+
+/* Teks tebal (bold) di dalam blok kata-kata, ukuran sedikit lebih kecil dari paragraf */
+.kata-kata b {
+    font-size: 1.2vw;
+}
+
+/* Elemen dengan id kickgoal: diberi jarak atas dan warna champagne (kemungkinan CTA/highlight) */
+#kickgoal {
+    margin-top: 1vw;
+    color: var(--champagne);
+}
+
+/* Link di dalam blok kata-kata: warna champagne dan ukuran font lebih kecil */
+.kata-kata a {
+    color: var(--champagne);
+    font-size: 1vw;
+}
+
+/* Elemen <details> (dropdown/expand info): jarak atas dan teks rata kiri */
+details {
+    margin-top: 4vw;
+    text-align: left;
+}
+
+/* Elemen <summary> (judul dari details/dropdown): warna champagne dan ukuran font */
+summary {
+    color: var(--champagne);
+    font-size: 1.2vw;
+}
+
+/* Wrapper kedua (misalnya untuk foto + keterangan tambahan di dalam details): flexbox berdampingan */
+.divdik {
+    display: flex;
+}
+
+/* Container foto tambahan: lebar melebihi 100% (130%) — kemungkinan untuk efek overflow/besar */
+.fto {
+    width: 130%;
+}
+
+/* Gambar di dalam .fto: menyesuaikan penuh lebar container-nya */
+.fto img {
+    width: 100%;
+}
+
+/* Blok teks pendamping foto (.fto): warna teks, padding kiri-kanan, ukuran font kecil */
+.kata {
+    color: var(--ink);
+    padding: 0vw 3vw;
+    font-size: 1vw;
+}
+
+/* Judul (h2) di dalam blok .kata: jarak bawah sebelum teks berikutnya */
+.kata h2 {
+  margin-bottom: 1vw;
+}
+
+/* ===== RESPONSIVE: tampilan untuk layar mobile/tablet (lebar maksimal 768px) ===== */
+@media(max-width: 768px) {
+    /* Section About: padding disesuaikan agar lebih proporsional di layar kecil */
+    .about {
+        padding: 25vw 0vw 15vw;
+    }
+
+    /* Judul utama diperbesar relatif (vw) agar tetap proporsional di layar kecil */
+    .about h1 {
+        font-size: 6vw;
+    }
+
+    /* Wrapper isi: diubah dari flex ke block agar gambar & teks bertumpuk vertikal, lebar diperbesar jadi 90% */
+    .isi {
+        display: block;
+        width: 90%;
+    }
+
+    /* Container gambar: diperkecil dan diposisikan di tengah karena tampilan sudah block/vertikal */
+    .pic {
+        width: 60%;
+        margin: auto;
+    }
+
+    /* Sub-judul diperbesar untuk keterbacaan di layar kecil */
+    .kata-kata h3 {
+        font-size: 5vw;
+    }
+
+    /* Paragraf teks diperbesar dan jarak bawah ditambah untuk mobile */
+    .kata-kata p {
+        font-size: 4vw;
+        margin-bottom: 4vw;
+    }
+
+    /* Teks tebal: ukuran diperbesar dan diberi jarak atas ekstra untuk pemisahan konten */
+    .kata-kata b {
+      font-size: 3vw;
+      margin-top: 10vw;
+    }
+
+    /* Link diperbesar agar mudah di-tap di layar mobile */
+    .kata-kata a {
+      font-size: 4vw;
+    }
+
+    /* Summary (judul details): ukuran diperbesar, jarak atas & kiri disesuaikan untuk tampilan mobile */
+    summary {
+      font-size: 4vw;
+      margin-top: 9vw;
+      margin-left: 8vw;
+    }
+
+    /* Wrapper kedua (.divdik): diubah ke block agar konten bertumpuk vertikal di mobile */
+    .divdik {
+      display: block;
+    }
+
+    /* Container foto tambahan: lebar dikembalikan ke 75% dan diposisikan di tengah dengan jarak atas */
+    .fto {
+      margin: auto;
+      margin-top: 4vw;
+      width: 75%;
+    }
+
+    /* Blok teks (.kata): ukuran font diperbesar, rata tengah, dan diberi jarak atas untuk mobile */
+    .kata {
+      font-size: 3vw;
+      text-align: center;
+      margin-top: 3vw;
+    }
+
+    /* Judul (h2) di dalam .kata: jarak bawah diperbesar agar tidak terlalu rapat di mobile */
+    .kata h2 {
+      margin-bottom: 5vw;
+    }
+}

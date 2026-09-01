@@ -1,0 +1,142 @@
+/* Container utama halaman contact */
+.contact {
+    padding: 10vw 5vw 3vw;
+    background-color: var(--bg);
+    color: var(--ink);
+    border-bottom: 0.1vw solid var(--line);
+
+}
+
+/* Bagian atas: judul, tagline, dan deskripsi pembuka */
+.atas {
+    text-align: center;
+    border-bottom: 0.1vw solid var(--line);
+    padding-bottom: 2vw;
+}
+
+.atas h1 {
+    font-size: 2vw;
+    color: var(--champagne);
+}
+
+/* Tagline "LET'S CONNECT" */
+.atas p {
+    margin-top: 3vw;
+    letter-spacing: 0.4vw;
+    font-size: 2vw;
+}
+
+.atas small {
+    font-size: 1.2vw;
+}
+
+/* Wrapper daftar info kontak (WhatsApp, email, Instagram, lokasi) + logo dekoratif */
+.kontak {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    font-size: 1.3vw;
+    width: 70%;
+    margin: auto;
+    padding-top: 3vw;
+    position: relative;
+}
+
+/* Jarak antar item info kontak (WhatsApp, email, dst) */
+.info {
+  margin-bottom: 5vw;
+}
+
+
+/* Kolom kiri: WhatsApp & Email */
+.satu {
+    width: 75%;
+}
+
+/* Kolom kanan: Instagram & Location */
+.dua {
+    width: 25%;
+}
+
+/* Label judul tiap item kontak (misal "WHATSAPP", "EMAIL") */
+.jdl {
+  font-weight: bold;
+  color: var(--champagne);
+}
+
+/* Logo dekoratif, diposisikan absolute menumpuk di atas konten kontak */
+.kontak img {
+  width: 18vw;
+  position: absolute;
+  top: 1vw;
+  right: 21vw;
+}
+
+
+/* Teks penutup di bawah section (misal "NEED HELP?" / "WE'RE HERE FOR YOUR GAME") */
+.contact > p {
+  text-align: center;
+  font-size: 1vw;
+  letter-spacing: 0.1vw;
+}
+
+/* ===== RESPONSIVE: tablet & HP (max-width 768px) ===== */
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 23vw 6vw 10vw;
+  }
+
+  .atas {
+    padding-bottom: 5vw;
+  }
+
+  .atas h1 {
+    font-size: 6vw;
+  }
+
+  .atas p {
+    margin-top: 5vw;
+    letter-spacing: 0.2vw;
+    font-size: 4vw;
+  }
+
+  .atas small {
+    font-size: 3vw;
+  }
+
+  /* Info kontak disusun ke bawah (bukan berdampingan) & ditengahkan di layar sempit */
+  .kontak {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6vw;
+    font-size: 3.5vw;
+    width: 100%;
+    padding-top: 6vw;
+  }
+
+  .info {
+    margin-bottom: 6vw;
+  }
+
+  /* Kedua kolom jadi full width karena sudah di-stack vertikal */
+  .satu,
+  .dua {
+    width: 100%;
+  }
+
+  /* Logo dekoratif kembali ke posisi normal (bukan absolute) di mobile */
+  .kontak img {
+    position: static;
+    width: 45vw;
+    margin: 0 auto 5vw;
+    right: auto;
+    top: auto;
+  }
+
+  .contact > p {
+    font-size: 3vw;
+    letter-spacing: 0.15vw;
+  }
+}

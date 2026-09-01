@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman checkout -->
+    <link rel="stylesheet" href="/css/buy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (versi ringkas, hanya logo + dark mode + keranjang, tanpa menu HOME/SHOP/dll) -->
+    <nav>
+        <div class="logo">
+            <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang belanja + badge jumlah item (diisi via JS) -->
+                <li><a href="keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tombol kembali ke halaman sebelumnya (fungsinya diatur via JS, href kosong ditimpa preventDefault) -->
+    <div class="back"><a href=""><span class="material-symbols-outlined">arrow_back</span></a></div>
+
+
+    <!-- Section utama halaman checkout -->
+    <section class="checkout">
+        <div class="judul">
+            <p>CHECKOUT</p>
+            <small>Complete Your Order</small>
+        </div>
+        <div class="info">
+            <div class="info-produk">
+                <!-- Container daftar produk yang di-checkout (diisi otomatis via JS/buy.js) -->
+                <div class="card-co">
+
+                </div>
+                <!-- Form data pengiriman (nama, WhatsApp, email, alamat) -->
+                <div class="addres">
+                    <p>CUSTOMER INFORMATION</p>
+                        <form action="">
+                            <div class="identitas">
+                                <label for="nama">Name</label><br>
+                                <input type="text" minlength="3" maxlength="50" placeholder="Full Name" id="nama" required>
+
+                                <br>
+                                <label for="wa">Whatsapp</label><br>
+                                <input type="tel" minlength="10" maxlength="13" placeholder="WhatsApp" id="whatsapp" required>
+
+                                <br>
+                                <label for="wa">E-mail</label><br>
+                                <input type="email" minlength="5" maxlength="100" placeholder="Email" id="email" required>
+                            </div>
+                            <div class="alamat">
+                                <label for="alamat">Address</label><br>
+                                <textarea name="alamat" id="alamat" placeholder="Your Addres"></textarea>
+                            </div>
+                        </form>
+                </div>
+                <!-- Pilihan metode pembayaran (QRIS atau COD) -->
+                <div class="payment">
+                    <p>PAYMENT</p>
+                    <form action="">
+                        <input type="radio" name="payment" id="qris" value="QRIS">
+                        <label for="qris">QRIS</label>
+
+                        <br>
+
+                        <input type="radio" name="payment" id="cod" value="COD">
+                        <label for="cod">CASH ON DELIVERY</label>
+                    </form>
+                </div>
+                <!-- Rincian biaya (subtotal, ongkir, total) & tombol beli -->
+                <div class="bagian-bawah">
+
+                    <div class="rincian">
+                        <div class="subtotal">
+                            <p>Subtotal</p>
+                            <!-- Nilai subtotal diisi otomatis via JS -->
+                            <p id="subtotal"></p>
+                        </div>
+                        <div class="shipping">
+                            <p>Shipping</p>
+                            <!-- Nilai ongkir diisi otomatis via JS -->
+                            <p id="shipping"></p>
+                        </div>
+                        <div class="total">
+                            <p>Total</p>
+                            <!-- Nilai total diisi otomatis via JS -->
+                            <p id="total"></p>
+                        </div>
+                    </div>
+                    <!-- Tombol checkout, validasi & aksinya diatur via JS -->
+                    <a id="buy">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container notifikasi pop-up -->
+    <div id="notif"></div>
+
+
+    <!-- Footer versi ringkas, hanya copyright -->
+    <footer>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script untuk render produk checkout, hitung total, validasi form, & proses pembayaran -->
+    <script src="/js/buy.js"></script>
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+</body>
+
+</html>

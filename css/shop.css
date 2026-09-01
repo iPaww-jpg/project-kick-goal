@@ -1,0 +1,328 @@
+/* Container utama halaman shop (search, filter, list produk) */
+.coba {
+    padding-top: 10vw;
+    padding-bottom: 8vw;
+    background-color: var(--bg);
+    border-bottom: 0.1vw solid var(--ink-soft);
+}
+
+/* Judul halaman "OUR PRODUCT" */
+.judul {
+    text-align: center;
+}
+
+.judul p {
+    color: var(--champagne);
+    font-size: 3vw;
+    font-weight: bold;
+    letter-spacing: 0.3vw;
+}
+
+.judul small {
+    color: var(--ink);
+    font-size: 1.5vw;
+    letter-spacing: 0.3vw;
+}
+
+/* Wrapper kolom pencarian, untuk menengahkan elemen search */
+.cari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+}
+
+/* Kotak input pencarian beserta ikon kaca pembesar */
+.search {
+    width: 35%;
+    height: 3vw;
+    position: relative;
+    margin-left: -5vw;
+}
+
+/* Posisi ikon search, ditempel di dalam input pakai absolute positioning */
+.search span {
+    position: absolute;
+    top: 0.8vw;
+    left: 1.5vw;
+    color: var(--champagne);
+    font-size: 1.8vw;
+
+}
+
+.search form {
+    width: 100%;
+    height: 100%;
+}
+
+.search input {
+    border-radius: 1vw;
+    width: 100%;
+    height: 100%;
+    padding-left: 4vw;
+    /* ruang kosong kiri supaya teks tidak tertutup ikon search */
+    border: none;
+    outline: none;
+    color: grey;
+    font-size: 1.1vw;
+    border: 0.1vw solid var(--champagne);
+}
+
+/* Wrapper tombol-tombol filter merk, untuk menengahkan */
+.filter {
+    display: flex;
+    justify-content: center;
+}
+
+/* Container tombol filter merk (diisi otomatis via JS) */
+.filter-merk {
+    margin-top: 2vw;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 2vw 1vw;
+    border-bottom: 0.1vw solid var(--ink-soft);
+    padding-bottom: 2vw;
+}
+
+/* Tombol filter merk (misal "ALL", "Nike", "Adidas", dst) */
+.filter-merk button {
+    background-color: transparent;
+    border: 0.1vw solid var(--champagne);
+    color: var(--champagne);
+    padding: 0.5vw 2vw;
+    border-radius: 2vw;
+    font-size: 1vw;
+    transition: 0.5s;
+    margin: 0 1vw;
+}
+
+.filter-merk button:hover {
+    background-color: var(--champagne);
+    color: var(--bg);
+}
+
+/* Container daftar kartu produk, layout grid pakai flex-wrap */
+.list-produk {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Kartu produk individual */
+.card {
+    background-color: var(--surface);
+    width: fit-content;
+    padding: 2vw;
+    width: 15vw;
+    border-radius: 0.5vw;
+    margin: 0 1.5vw 3.5vw;
+    animation: muncul 0.4s ease both;
+    text-decoration: none;
+    border-radius: 1vw;
+}
+
+/* Duplikat rule .card (animasi muncul + transisi hover) */
+.card {
+    animation: muncul 0.4s ease both;
+    transition: 0.5s;
+}
+
+/* Animasi kartu produk muncul dari bawah dengan efek fade-in */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gambar produk di dalam kartu */
+.card img {
+    width: 15vw;
+    border-radius: 1vw;
+
+}
+
+/* Nama merk produk */
+.merk {
+    font-size: 1.3vw;
+    color: var(--ink);
+    font-weight: bold;
+    margin-top: 1vw;
+}
+
+/* Nama produk, height fixed supaya tinggi kartu konsisten meski nama beda panjang */
+.nama {
+    font-size: 1.5vw;
+    color: var(--champagne);
+    height: 6vw;
+    width: 100%;
+}
+
+/* Harga produk */
+.harga {
+    color: var(--ink);
+    margin-bottom: 1vw;
+    font-size: 1.2vw;
+}
+
+/* Tombol/link "DETAIL" di bagian bawah kartu */
+.detail {
+    display: block;
+    color: var(--bg);
+    background-color: var(--champagne);
+    width: 100%;
+    padding: 0.8vw 0;
+    text-align: center;
+    font-size: 1.2vw;
+    border: 0.1vw solid var(--champagne);
+    border-radius: 1vw;
+
+    transition: 0.5s;
+
+}
+
+.detail:hover {
+    background-color: var(--bg);
+    color: var(--champagne);
+}
+
+/* Hilangkan underline default pada link di dalam kartu */
+.card a {
+    text-decoration: none;
+}
+
+/* Efek hover pada seluruh kartu produk */
+.card:hover {
+    background-color: var(--surface-h);
+}
+
+/* Class penanda tombol filter yang sedang aktif dipilih */
+.active {
+    background-color: var(--champagne) !important;
+    color: var(--bg) !important;
+}
+
+/* Kalau nama produk pendek (< 21 karakter, diatur via JS), lebar teks diperkecil */
+.nama.panjang {
+    width: 60%;
+}
+
+/* ===== RESPONSIVE: tablet & HP (max-width 768px) ===== */
+@media(max-width : 768px) {
+    .coba {
+        padding-top: 22vw;
+        border-bottom: 0.8vw solid var(--line);
+    }
+
+    .judul p {
+        font-size: 6vw;
+    }
+
+    .judul small {
+        font-size: 3vw;
+    }
+
+    .search {
+        width: 60%;
+        height: 6vw;
+    }
+
+    .search input {
+        border-radius: 2vw;
+        padding-left: 7vw;
+        font-size: 2vw;
+    }
+
+    .search span {
+        font-size: 4vw;
+        top: 1.2vw;
+    }
+
+    .filter-merk button {
+        font-size: 2.5vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    /* Kartu produk jadi 2 kolom di layar sempit */
+    .card {
+        width: 38vw;
+    }
+
+    .card img {
+        width: 38vw;
+    }
+
+    .merk {
+        font-size: 3vw;
+    }
+
+    .nama {
+        font-size: 3.4vw;
+        margin-bottom: 7vw;
+        width: 90%;
+    }
+
+    .harga {
+        font-size: 3vw;
+    }
+
+    .detail {
+        font-size: 3vw;
+    }
+
+    .nama.panjang {
+        width: 50%;
+    }
+}
+
+/* ===== RESPONSIVE: HP kecil (max-width 480px) ===== */
+@media(max-width: 480px) {
+    .search {
+        width: 70%;
+        height: 8vw;
+    }
+
+    .search input {
+        border-radius: 2vw;
+        padding-left: 8vw;
+        font-size: 4vw;
+    }
+
+    .search span {
+        font-size: 5vw;
+        top: 2vw;
+        left: 3vw;
+    }
+
+    .filter-merk button {
+        font-size: 4vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+    }
+
+    .merk {
+      font-size: 4vw;
+    }
+
+    .nama {
+      font-size: 3.8vw;
+      width: 100%;
+    }
+
+    .harga {
+      font-size: 4.5vw;
+    }
+
+    .detail {
+      font-size: 4vw;
+    }
+}

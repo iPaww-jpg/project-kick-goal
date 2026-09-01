@@ -1,0 +1,385 @@
+/* Wrapper konten utama halaman checkout, untuk menengahkan .info-produk */
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+/* Container utama halaman checkout */
+.checkout {
+    padding: 11vw 5vw 5vw;
+    background-color: var(--bg);
+}
+
+/* Judul "CHECKOUT" beserta subtitle */
+.judul {
+    margin-bottom: 2vw;
+    text-align: center;
+}
+
+.judul p {
+    color: var(--ink);
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.judul small {
+    color: var(--champagne);
+    font-size: 1vw;
+    letter-spacing: 0.5vw;
+}
+
+
+/* Panel utama checkout: daftar produk, form alamat, payment, rincian, tombol beli */
+.info-produk {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--surface);
+    padding: 2vw 5vw;
+    width: 70%;
+    border-radius: 1vw;
+
+}
+
+/* Baris 1 produk yang di-checkout (foto + detail) */
+.produk {
+    display: flex;
+    justify-content: start;
+    gap: 1vw;
+    margin-top: 2vw;
+    padding-bottom: 2vw;
+    border-bottom: 0.1vw solid var(--line);
+}
+
+/* Container detail produk (merk, nama, ukuran, harga, qty) */
+.detail-produk {
+    width: 100%;
+}
+
+/* Container foto produk */
+.foto {
+    width: 35%;
+}
+
+.foto img {
+    border-radius: 1vw;
+    width: 100%;
+}
+
+.merk {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: var(--ink);
+    margin-top: 2vw;
+}
+
+.nama {
+    letter-spacing: 0.2vw;
+    font-size: 2vw;
+    color: var(--champagne);
+    width: 50%;
+}
+
+.ukuran {
+    margin-top: 1vw;
+    font-size: 1.3vw;
+    color: var(--ink-soft);
+}
+
+/* Harga satuan produk */
+.harga {
+    font-size: 1.8vw;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+/* Baris kontrol quantity (label "Quantity :" + tombol +/-) */
+.qty {
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1vw;
+    font-size: 1.2vw;
+
+}
+
+/* Container tombol + dan - beserta angka qty */
+.tombol {
+    display: flex;
+    gap: 0.5vw;
+}
+
+/* Tombol tambah/kurang quantity (bentuk bulat kecil) */
+.tombol button {
+    width: 2vw;
+    height: 2vw;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    border: 0.2vw solid var(--champagne);
+    color: var(--champagne);
+    transition: 0.5s;
+    border-radius: 1vw;
+
+}
+
+.tombol button:hover {
+    background-color: var(--champagne);
+    color: var(--bg);
+}
+
+/* Angka quantity di antara tombol + dan - */
+.tombol p {
+    width: 2vw;
+    text-align: center;
+}
+
+/* Section pilihan metode pembayaran */
+.payment {
+    color: var(--ink);
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.payment p {
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.payment form label {
+    font-size: 1.2vw;
+}
+
+/* Section rincian biaya (subtotal, shipping, total), didorong ke bawah panel via margin-top: auto */
+.rincian {
+    color: var(--ink);
+    margin-top: auto;
+    border-top: 0.1vw solid var(--ink-soft);
+}
+
+
+/* Baris subtotal, shipping, dan total — label di kiri, nominal di kanan */
+.subtotal,
+.shipping,
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 1vw 1vw;
+    font-size: 1.1vw;
+}
+
+/* Tombol "BUY NOW" */
+#buy {
+    background-color: var(--champagne);
+    border: 0.1vw solid var(--champagne);
+    color: var(--bg);
+    font-size: 1.8vw;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    padding: 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1vw;
+
+}
+
+/* Warna aksen radio button metode pembayaran QRIS */
+#qris {
+    accent-color: var(--champagne);
+}
+
+/* Warna aksen radio button metode pembayaran COD */
+#cod {
+    accent-color: var(--champagne);
+}
+
+/* Subtotal per item produk (harga x qty), ditampilkan rata kanan di bawah tiap produk */
+.subtotal-item {
+    display: flex;
+    justify-content: end;
+    font-size: 1vw;
+    margin-top: 1vw;
+    color: var(--ink);
+}
+
+/* Kalau nama produk pendek (< 21 karakter, diatur via JS), lebar teks diperkecil */
+.nama.panjang {
+    width: 30%;
+}
+
+/* Section form data pengiriman (CUSTOMER INFORMATION) */
+.addres {
+    margin-top: 2vw;
+    color: var(--ink);
+}
+
+.addres p {
+    font-weight: bold;
+    font-size: 1.8vw;
+    text-align: center;
+    letter-spacing: 0.2vw;
+}
+
+/* Form identitas & alamat disusun berdampingan (flex) */
+.addres form {
+    display: flex;
+    margin-top: 2vw;
+}
+
+/* Kolom kiri form: input nama, WhatsApp, email */
+.identitas {
+    width: 50%;
+}
+
+.identitas input {
+    margin-bottom: 1vw;
+    width: 80%;
+    height: 2vw;
+    padding-left: 1vw;
+    border-radius: 1vw;
+    border-color: var(--champagne);
+}
+
+form label {
+    font-size: 1.2vw;
+}
+
+/* Textarea alamat */
+.addres textarea {
+    width: 80%;
+    height: 80%;
+    padding-left: 1vw;
+    padding-top: 1vw;
+    border-radius: 1vw;
+    border-color: var(--champagne);
+}
+
+/* Kolom kanan form: textarea alamat */
+.alamat {
+    width: 50%;
+}
+
+/* ===== RESPONSIVE: tablet & HP (max-width 768px) ===== */
+@media(max-width: 768px) {
+    .checkout {
+        padding: 23vw 5vw 10vw;
+    }
+
+    .judul p {
+        font-size: 6vw;
+    }
+
+    .judul small {
+        font-size: 4vw;
+    }
+
+    .info-produk {
+        width: 90%;
+    }
+
+    .produk {
+        padding-bottom: 5vw;
+    }
+
+    .foto {
+        width: 55vw;
+        margin-right: 2vw;
+    }
+
+    .merk {
+        font-size: 4vw;
+    }
+
+    .nama {
+        font-size: 5vw;
+        width: 100%;
+    }
+
+    .ukuran {
+        font-size: 3vw;
+    }
+
+    .harga {
+        font-size: 4vw;
+    }
+
+    .qty {
+        font-size: 3vw;
+        gap: 2vw;
+    }
+
+    .tombol {
+        gap: 2vw;
+    }
+
+    .tombol button {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .subtotal-item {
+        font-size: 3vw;
+    }
+
+    .addres p {
+        font-size: 5vw;
+    }
+
+    .identitas input {
+        height: 7vw;
+        width: 95%;
+        padding-left: 3vw;
+        font-size: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    .identitas {
+        width: 100%;
+    }
+
+    /* Form identitas & alamat disusun ke bawah (bukan berdampingan) di layar sempit */
+    .addres form {
+        display: block;
+        width: 100%;
+    }
+
+    form label {
+        font-size: 3.5vw;
+    }
+
+    .addres textarea {
+        width: 95%;
+        height: 25vw;
+        padding-left: 3vw;
+        padding-top: 2vw;
+        font-size: 3vw;
+    }
+
+    .alamat {
+        width: 100%;
+    }
+
+    .payment p {
+        font-size: 4vw;
+    }
+
+    .payment form label {
+        font-size: 3.5vw;
+    }
+
+    .rincian {
+        padding: 3vw 0;
+    }
+
+    .subtotal,
+    .shipping,
+    .total {
+        font-size: 3.5vw;
+    }
+
+    #buy {
+        font-size: 4vw;
+    }
+}

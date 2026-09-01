@@ -1,0 +1,524 @@
+:root {
+    --bg: #0E0D0C;
+    /* hitam hangat, bukan hitam biru */
+    --surface: #131211;
+    /* panel sedikit lebih terang dari bg */
+    --surface-h: #1A1917;
+    /* hover state di atas surface */
+    --ink: #F5F0E6;
+    /* teks & garis utama */
+    --ink-soft: rgba(245, 240, 230, .55);
+    --line: rgba(245, 240, 230, .12);
+    --champagne: #C9A961;
+    /* aksen metalik, dipakai tipis */
+    --wine: #5C1A24;
+    /* aksen kedua, sangat jarang */
+    --glow: rgba(201, 169, 97, .16);
+
+    /* untuk notif */
+    --notif-alert-text: #F5D9DD;
+    --notif-alert-border: var(--wine);
+    --notif-alert-bg: #3A141B;
+    /* solid, gelap kemerahan senada --wine */
+
+    --notif-success-text: #EAF0E3;
+    --notif-success-border: #6E8A5C;
+    --notif-success-bg: #2B3324;
+    /* solid, hijau gelap senada --surface */
+}
+
+/* Palet warna untuk mode terang (light mode) */
+body.light {
+    --bg: #ffffff;
+    --surface: rgba(245, 240, 230, .55);
+    --surface-h: #EAE4D8;
+
+    --ink: #0E0D0C;
+    --ink-soft: rgba(14, 13, 12, .55);
+    --line: rgba(14, 13, 12, .12);
+
+    /* untuk notif */
+    --notif-alert-text: #FFFFFF;
+    --notif-alert-border: #8C2F3A;
+    --notif-alert-bg: #8C2F3A;
+    /* solid wine, teks putih biar kontras */
+
+    --notif-success-text: #FFFFFF;
+    --notif-success-border: #4F7A3D;
+    --notif-success-bg: #4F7A3D;
+}
+
+
+/* Reset margin default & set font global */
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar bawah disembunyikan di desktop, hanya muncul di mobile */
+nav.bottom {
+    display: none;
+}
+
+/* Navbar atas (desktop) */
+nav {
+    position: fixed;
+    background-color: var(--bg);
+    display: flex;
+    width: 100%;
+    height: 7vw;
+    border-bottom: 0.3vw solid var(--line);
+    z-index: 100;
+}
+
+nav .menu ul li span {
+    font-size: 1.6vw;
+}
+
+
+/* Warna khusus untuk menu yang sedang aktif */
+.on a {
+    color: var(--champagne) !important;
+}
+
+.logo {
+    margin-left: 5vw;
+    margin-top: 1.7vw;
+}
+
+.logo img {
+    width: 10vw;
+}
+
+.menu {
+    position: absolute;
+    right: 3vw;
+    height: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+}
+
+.menu li {
+    align-items: center;
+    margin-right: 5vw;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 1vw;
+    color: var(--ink-soft);
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: var(--champagne);
+}
+
+/* Tombol toggle dark/light mode */
+.dark-mode {
+    color: var(--ink-soft);
+    font-size: 1.2vw;
+}
+
+.dark-mode:hover {
+    color: var(--champagne);
+}
+
+.menu ul li button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Container ikon keranjang, jadi acuan posisi absolute untuk badge .notif */
+.keranjang {
+    margin-top: 0.4vw;
+    position: relative;
+
+}
+
+.keranjang i {
+    font-size: 1.2vw;
+    color: var(--ink-soft);
+}
+
+/* ===== BADGE NOTIFIKASI JUMLAH ITEM KERANJANG =====
+   Pakai width & height TETAP (bukan fit-content) + flex untuk menengahkan
+   angka, supaya badge selalu berbentuk lingkaran sempurna, baik isinya
+   1 digit (5) maupun 2 digit (23, 44). Posisinya nempel di pojok kanan
+   atas ikon keranjang, sedikit menjorok keluar — pola badge notifikasi
+   pada umumnya. */
+.notif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 1.5vw;
+    height: 1.5vw;
+    border: 0.1vw solid var(--champagne);
+    border-radius: 50%;
+    background-color: var(--champagne);
+    color: var(--bg);
+    font-size: 0.65vw;
+    line-height: 1;
+    position: absolute;
+    top: -0.6vw;
+    right: -0.6vw;
+}
+
+/* Angka jumlah item di dalam badge, dipusatkan oleh flex parent */
+.notif p {
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Footer situs */
+footer {
+    padding: 5vw 0 3vw;
+    background-color: var(--bg);
+}
+
+footer img {
+    width: 25vw;
+    margin: auto;
+}
+
+.foto {
+    text-align: center;
+}
+
+.slogan {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.slogan p {
+    color: var(--ink-soft);
+    font-weight: bold;
+    letter-spacing: 0.2vw;
+}
+
+.slogan small {
+    color: var(--ink-soft);
+    letter-spacing: 0.1vw;
+
+}
+
+.fot-menu {
+    margin-top: 2vw;
+    font-size: 1.2vw;
+}
+
+.fot-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.fot-menu ul li {
+    margin-right: 2vw;
+}
+
+.fot-menu a {
+    color: var(--champagne);
+    text-decoration: none;
+}
+
+.medsos {
+    margin-top: 2vw;
+    font-size: 1.2vw;
+    color: var(--ink-soft);
+    text-align: center;
+    border-bottom: 0.1vw solid var(--ink-soft);
+    padding-bottom: 2vw;
+}
+
+.medsos ul {
+    display: flex;
+    justify-content: center;
+}
+
+.medsos ul li {
+    margin-right: 3vw;
+}
+
+.medsos a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 2vw;
+    padding-top: 1.5vw;
+    text-align: center;
+}
+
+.copyright p {
+    color: var(--ink-soft);
+    font-size: 0.8vw;
+    letter-spacing: 0.05vw;
+}
+
+/* Notifikasi pop-up sementara (bukan badge keranjang, ini pesan alert/sukses) */
+#notif {
+    /* padding: 2vw; */
+    width: fit-content;
+    position: fixed;
+    margin: auto;
+    font-size: 1vw;
+    width: 15vw;
+    opacity: 0;
+    top: 8vw;
+    right: 1vw;
+    border: 0.1vw solid white;
+
+}
+
+/* Animasi notifikasi pop-up muncul dari kanan */
+@keyframes munculKanan {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Style notifikasi pop-up untuk pesan gagal/peringatan */
+#notif.tidak {
+    animation: munculKanan 0.2s ease-out;
+    opacity: 1;
+    color: var(--notif-alert-text);
+    border: 1px solid var(--notif-alert-border);
+    background: var(--notif-alert-bg);
+    padding: 0.5vw 1vw;
+    border-radius: 0.28vw;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+/* Style notifikasi pop-up untuk pesan sukses */
+#notif.berhasil {
+    animation: munculKanan 0.2s ease-out;
+    opacity: 1;
+    color: var(--notif-success-text);
+    border: 1px solid var(--notif-success-border);
+    background: var(--notif-success-bg);
+    padding: 0.5vw 1vw;
+    border-radius: 0.28vw;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+/* Tombol "kembali" (panah back), muncul di halaman detail/checkout */
+.back a {
+    text-decoration: none;
+    position: absolute;
+    top: 10vw;
+    left: 2vw;
+    background-color: var(--champagne);
+    padding: 1vw 1.5vw;
+    border-radius: 1vw;
+    text-align: center;
+}
+
+/* Warna ikon panah back, ditulis eksplisit karena warna global "span" 
+   akan menimpa warna yang diwariskan dari .back a */
+.back a span {
+    color: var(--bg);
+}
+
+/*responsif*/
+@media (max-width: 768px) {
+    .back a {
+        color: var(--bg);
+        top: 22vw;
+        left: 4vw;
+        font-size: 3vw;
+        padding: 1.7vw 2vw;
+    }
+
+    /* Sembunyikan menu navbar atas versi teks di mobile, digantikan navbar bawah */
+    #hide {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    nav {
+        height: 18vw;
+    }
+
+    .logo img {
+        margin-top: 2.6vw;
+    }
+
+    /* Tampilkan navbar bawah khusus mobile */
+    nav.bottom {
+        display: block;
+        position: fixed;
+        bottom: 0vw;
+        border-top: 0.1vw solid var(--line);
+        background-color: var(--bg);
+        font-size: 2vw;
+    }
+
+    nav .menu ul li span {
+        font-size: 6vw !important;
+    }
+
+    nav.bottom ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15vw;
+        list-style: none;
+        padding-top: 3.5vw;
+    }
+
+    nav.bottom ul li a {
+        color: var(--ink-soft);
+    }
+
+    nav.bottom ul li {
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .logo {
+        margin: auto;
+    }
+
+    .logo img {
+        width: 30vw;
+    }
+
+    .notif {
+        width: 5vw;
+        height: 5vw;
+        font-size: 2.2vw;
+        top: -2.3vw;
+        right: -2.5vw;
+    }
+
+    footer {
+        padding-top: 6vw;
+        padding-bottom: 23vw;
+    }
+
+    footer img {
+        width: 35vw;
+    }
+
+    .slogan {
+        font-size: 3.5vw;
+    }
+
+    .fot-menu {
+        font-size: 3vw;
+        margin-left: -3vw;
+    }
+
+    .medsos {
+        font-size: 3vw;
+        padding-bottom: 4vw;
+    }
+
+    .medsos ul li {
+        margin-right: 5vw;
+    }
+
+    .medsos p {
+        margin-left: 1vw;
+    }
+
+    .copyright p {
+        font-size: 3vw;
+    }
+
+    #notif {
+        top: 21vw;
+        right: 4vw;
+        width: 55vw;
+        font-size: 3.2vw;
+        padding: 2.5vw 3vw;
+        border-width: 0.3vw;
+    }
+
+    #notif.tidak,
+    #notif.berhasil {
+        padding: 2.5vw 3vw;
+        font-size: 3vw;
+        border-radius: 1.2vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+    nav.bottom ul {
+        margin-left: -7vw;
+    }
+
+    nav.bottom {
+        padding: 0vw;
+    }
+
+    nav .menu ul li span {
+        font-size: 4vw;
+    }
+
+    footer {
+        padding-top: 6vw;
+        padding-bottom: 23vw;
+    }
+
+    footer img {
+        width: 35vw;
+    }
+
+    .slogan {
+        font-size: 3.7vw;
+    }
+
+    .fot-menu {
+        font-size: 3vw;
+        margin-left: -7vw;
+    }
+
+    .medsos ul {
+        margin-left: 4vw;
+    }
+
+    .medsos {
+        font-size: 3vw;
+        margin-left: -2vw;
+        padding-bottom: 4vw;
+    }
+
+    .medsos ul li {
+        margin-right: 9vw;
+    }
+
+    .medsos p {
+        margin-left: 5vw;
+    }
+
+    .copyright p {
+        font-size: 3vw;
+    }
+
+}

@@ -1,0 +1,272 @@
+/* Container utama section detail produk */
+.detail {
+    padding: 10vw 8vw 7vw;
+    background-color: var(--bg);
+    border-bottom: 0.3vw solid var(--line);
+    width: fit-content;
+    height: fit-content;
+
+}
+
+/* Animasi fade-in untuk card detail produk */
+@keyframes muncul {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Judul "DETAIL PRODUCT" */
+.judul {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1vw;
+    letter-spacing: 0.2vw;
+    color: var(--ink);
+}
+
+/* Card utama berisi foto + info produk, muncul dengan animasi fade-in */
+.isi-detail {
+    animation: muncul 1s ease both;
+    padding: 4vw 6vw;
+    background-color: var(--surface);
+    display: flex;
+        border-radius: 1vw;
+
+}
+
+/* Container foto produk */
+.pic {
+    height: 35vw;
+}
+
+.pic img {
+    border-radius: 1vw;
+    height: 100%;
+
+}
+
+/* Container informasi produk (merk, nama, deskripsi, ukuran, harga, tombol) */
+.detail-produk {
+    color: var(--ink);
+    padding: 2vw 1vw 0 2vw;
+}
+
+/* Nama merk produk */
+.merk {
+    font-size: 2vw;
+    color: var(--ink);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+/* Nama produk, height fixed supaya layout tidak "loncat" meski nama beda panjang */
+.nama {
+    font-size: 2.5vw;
+    letter-spacing: 0.3vw;
+    color: var(--champagne);
+    margin-bottom: 1.5vw;
+    height: 7vw;
+}
+
+/* Deskripsi produk, height fixed juga untuk konsistensi layout */
+.deskripsi {
+    font-size: 1.2vw;
+    height: 6.2vw;
+}
+
+/* Baris kategori + warna produk (format: "Kategori · Warna") */
+.kategori-warna {
+    font-size: 1.1vw;
+    margin-bottom: 1vw;
+    color: var(--champagne);
+}
+
+/* Container pilihan ukuran */
+.ukuran {
+    margin-bottom: 1vw;
+}
+
+.ukuran p {
+    margin-bottom: 0.5vw;
+}
+
+/* Tombol pilihan ukuran (misal 39, 40, 41, dst) */
+.ukuran button {
+    font-size: 1.2vw;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+    background-color: transparent;
+    border: 0.1vw solid var(--champagne);
+    color: var(--champagne);
+    width: 3.5vw;
+    transition: 0.5s;
+    border-radius: 1vw;
+
+}
+
+.ukuran button:hover {
+    background-color: var(--champagne);
+    color: var(--bg);
+}
+
+/* Harga produk */
+.harga {
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+}
+
+/* Container tombol aksi: "PURCHASE" & tombol keranjang */
+.tombol {
+    display: flex;
+    align-items: center;
+
+}
+
+/* Tombol "PURCHASE" */
+.tombol a {
+    text-decoration: none;
+    margin-right: 2vw;
+    font-size: 1.3vw;
+    background-color: var(--surface);
+    color: var(--champagne);
+    padding: 0.5vw 2vw;
+    border: 0.1vw solid var(--champagne);
+    transition: 0.3s;
+    border-radius: 1vw;
+
+}
+
+.tombol a:hover {
+    background-color: var(--champagne);
+    color: var(--bg);
+}
+
+/* Tombol ikon keranjang (icon-only button) */
+.tombol button {
+    font-size: 1.3vw;
+    background: transparent;
+    border: none;
+    border: 0.1vw solid var(--champagne);
+    padding: 0.1vw 1vw;
+    transition: 0.3s;
+    border-radius: 1vw;
+
+}
+
+/* Warna ikon di dalam tombol keranjang */
+.tombol span {
+    margin-top: 0.5vw;
+    color: var(--champagne);
+    width: 100%;
+}
+
+.tombol button:hover {
+    background-color: var(--champagne);
+}
+
+.tombol button:hover span {
+    color: var(--bg) !important;
+}
+
+/* Class penanda tombol ukuran yang sedang aktif dipilih */
+.active {
+    background-color: var(--champagne) !important;
+    color: var(--bg) !important;
+}
+
+/* Warna default untuk semua elemen span di halaman ini (termasuk ikon material-symbols) */
+span {
+    color: var(--ink-soft);
+}
+
+/* Kalau nama produk pendek (< 21 karakter, diatur via JS), lebar teks diperkecil */
+.nama.panjang {
+    width: 60%;
+}
+
+/* ===== RESPONSIVE: tablet & HP (max-width 768px) ===== */
+@media(max-width: 768px) {
+    .detail {
+        padding: 25vw 1vw 10vw;
+        width: 100%;
+    }
+
+    .judul {
+        font-size: 6vw;
+    }
+
+    /* Foto & info produk disusun ke bawah (bukan berdampingan) di layar sempit */
+    .isi-detail {
+        display: block;
+        width: 80%;
+        margin: auto;
+    }
+
+    .pic {
+        height: 60vw;
+        text-align: center;
+    }
+
+    .merk {
+        margin-top: 5vw;
+        font-size: 5vw;
+    }
+
+    .nama {
+        font-size: 6vw;
+        height: 18vw;
+        width: 80%;
+    }
+
+    .deskripsi {
+        font-size: 4vw;
+        height: 27vw;
+    }
+
+    .kategori-warna {
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .ukuran button {
+        font-size: 4.5vw;
+        margin-right: 3vw;
+        margin-bottom: 3vw;
+        width: 10vw;
+
+    }
+
+    /* Label "SELECT SIZE" */
+    .pilih-ukuran {
+        font-size: 4vw;
+        padding-bottom: 1vw;
+    }
+
+
+    .harga {
+        font-size: 6vw;
+    }
+
+    .nama.panjang {
+        width: 38%;
+    }
+
+    /* Tombol "PURCHASE" dibuat full-width & isinya ditengahkan di mobile */
+    .tombol a {
+        width: 70%;
+        height: 10vw;
+        font-size: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tombol button {
+        padding: 2vw;
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman shop (daftar produk) -->
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (desktop) -->
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li id="hide"><a href="../index.html">HOME</a></li>
+                <!-- Menu SHOP ditandai "on" karena ini halaman aktif saat ini -->
+                <li id="hide" class="on"><a href="shop.html">SHOP</a></li>
+                <li id="hide"><a href="about.html">ABOUT</a></li>
+                <li id="hide"><a href="contact.html">CONTACT</a></li>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang belanja + badge jumlah item (diisi via JS) -->
+                <li>
+                    <a href="keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar bawah, khusus tampilan mobile -->
+    <nav class="bottom">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="material-symbols-outlined">home</span><br>
+                    HOME
+                </a>
+            </li>
+
+            <!-- Menu SHOP ditandai aktif -->
+            <li class="on">
+                <a href="shop.html">
+                    <span class="material-symbols-outlined">storefront</span><br>
+                    SHOP
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    <span class="material-symbols-outlined">info</span><br>
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    <span class="material-symbols-outlined">contact_page</span><br>
+                    CONTACT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Konten utama halaman shop -->
+    <div class="coba">
+        <!-- Judul halaman -->
+        <div class="judul">
+            <P>OUR PRODUCT</P>
+            <small>Find your perfect futsal shoes</small>
+        </div>
+        <!-- Kolom pencarian produk (dijalankan lewat JS saat Enter ditekan) -->
+        <div class="cari">
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="Search Procuct" id="search">
+                </form>
+                <span class="material-symbols-outlined">search</span>
+            </div>
+        </div>
+        <!-- Container tombol filter berdasarkan merk (diisi otomatis via JS) -->
+        <div class="filter">
+            <div class="filter-merk" id="filter-merk">
+            </div>
+        </div>
+
+        <!-- Container daftar produk (diisi otomatis via JS/shop.js) -->
+        <div class="produk">
+            <div class="list-produk">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Container notifikasi pop-up (misal saat pencarian tidak ada hasil) -->
+    <div id="notif"></div>
+
+    <!-- Footer: logo, slogan, menu navigasi, sosial media, dan copyright -->
+    <footer>
+        <div class="foto">
+            <img src="/KICK & GOAL/logo_tulisan_bawah.png" alt="">
+        </div>
+        <div class="slogan">
+            <p>ELEVATE YOUR GAME</p>
+            <small>Premium futsal footwear engineered for every move.</small>
+        </div>
+        <div class="fot-menu">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="medsos">
+            <P>Follow Us :</P>
+            <ul>
+                <li><a href="https://wa.me/6283130835478" target="_blank">WHATSAPP</a></li>
+                <li><a href="https://tiktok.com/@ipww__" target="_blank">TIKTOK</a></li>
+                <li><a href="https://instagram.com/ipaww__" target="_blank">INSTAGRAM</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script untuk render daftar produk, filter merk, dan pencarian -->
+    <script src="/js/shop.js"></script>
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+</body>
+
+</html>

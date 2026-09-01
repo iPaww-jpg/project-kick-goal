@@ -1,0 +1,303 @@
+/* Reset margin default & set font global */
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body halaman "berhasil" (konfirmasi pembayaran), muncul dengan animasi fade-in */
+body {
+  background-color: var(--bg);
+  animation: muncul 0.5s ease-out;
+}
+
+/* Card utama berisi konfirmasi pembayaran & ringkasan pesanan */
+.pembayaran {
+  width: 50%;
+  padding: 5vw;
+  margin: 6vw auto 6vw;
+  border: 0.1vw solid var(--line);
+}
+
+/* Wrapper ikon centang, untuk menengahkan */
+.icon-berhasil {
+  display: flex;
+  justify-content: center;
+}
+
+/* Ikon centang (tanda pembayaran sukses), berbentuk lingkaran hijau */
+.icon-berhasil span {
+  font-size: 5vw;
+  border-radius: 50%;
+  padding: 3vw 3vw;
+  color: rgb(13, 176, 13);
+  animation: muncul 0.5s ease-out;
+  border: 0.4vw solid rgb(13, 176, 13);
+}
+
+/* Animasi fade-in + sedikit geser ke atas, dipakai di beberapa elemen halaman ini */
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pesan "PAYMENT SUCCESSFUL" beserta keterangan singkat */
+.kata-kata {
+  margin-top: 3vw;
+  color: var(--ink);
+  text-align: center;
+  padding-bottom: 1vw;
+  border-bottom: 0.3vw solid var(--line);
+  animation: muncul 0.5s ease-out;
+}
+
+.kata-kata p {
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+.kata-kata small {
+  font-size: 1.1vw;
+}
+
+/* Panel informasi alamat pengiriman (nama, WA, email, alamat) */
+.addres {
+  padding: 2vw 3vw;
+  background-color: var(--surface-h);
+  margin-bottom: 2vw;
+  width: 90%;
+  border-radius: 1vw;
+}
+
+.addres p {
+  font-size: 1vw;
+  letter-spacing: 0.1vw;
+  margin-bottom: 0.5vw;
+}
+
+/* Judul "Shipping to :" */
+.addres h3 {
+  font-weight: 500;
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+}
+
+/* Baris nama, WhatsApp, email — disusun sejajar dengan ikon di kirinya */
+.namaUsr,
+.wa,
+.email {
+  display: flex;
+}
+
+/* Baris alamat, beda dari yang lain karena teksnya bisa panjang & perlu wrap */
+#alamat {
+  flex-wrap: wrap;
+  position: relative;
+  padding-left: 2.5vw;
+  width: 90%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ikon lokasi diposisikan absolute karena teks alamat pakai flex-wrap (bukan flex biasa) */
+.alamat span {
+  position: absolute;
+}
+
+/* Ukuran & jarak ikon (person, phone, email, location) di panel alamat */
+.addres span {
+  font-size: 1.5vw;
+  margin-right: 1vw;
+}
+
+/* Section ringkasan belanja (alamat + daftar produk + rincian biaya) */
+.detail-belanja {
+  font-size: 1.5vw;
+  margin-top: 2vw;
+}
+
+/* Kartu 1 produk dalam ringkasan pesanan */
+.card-produk {
+  display: flex;
+  border-bottom: 0.1vw solid var(--line);
+  padding: 2vw;
+}
+
+/* Container foto produk */
+.pic {
+  width: 28%;
+}
+
+.pic img {
+  width: 100%;
+}
+
+/* Duplikat rule .detail-belanja: set warna teks */
+.detail-belanja {
+  color: var(--ink);
+}
+
+/* Container info produk (merk, nama, ukuran, qty) */
+.info {
+  margin-top: 2vw;
+  margin-left: 2vw;
+  color: var(--ink);
+}
+
+.merk {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.nama {
+  font-size: 1.5vw;
+  letter-spacing: 0.2vw;
+}
+
+.ukuran {
+  font-size: 1.2vw;
+  margin-bottom: 2vw;
+}
+
+.qty {
+  font-size: 1.2vw;
+}
+
+/* Judul "Detail Product" */
+.jdl {
+  color: var(--champagne);
+  letter-spacing: 0.2vw;
+}
+
+/* Section rincian biaya (subtotal, ongkir, total) */
+.rincian {
+  font-size: 1.3vw;
+}
+
+/* Baris subtotal, ongkir, dan total — label di kiri, nominal di kanan */
+.subtotal,
+.ongkir,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ongkir {
+  border-bottom: 0.1vw solid var(--line);
+  padding-bottom: 2vw;
+}
+
+.subtotal {
+  margin-top: 1vw;
+}
+
+.total {
+  margin-top: 1vw;
+}
+
+/* Tombol "Back to menu" */
+.pembayaran a {
+  margin-top: 2vw;
+  background-color: var(--champagne);
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 1vw;
+  text-decoration: none;
+  color: var(--bg);
+  border-radius: 1vw;
+
+}
+
+/* ===== RESPONSIVE: tablet & HP (max-width 768px) ===== */
+@media(max-width: 768px) {
+  .pembayaran {
+    width: 80%;
+  }
+
+  .icon-berhasil span {
+    font-size: 15vw;
+  }
+
+  .kata-kata {
+    padding-bottom: 3vw;
+  }
+
+  .kata-kata p {
+    font-size: 5vw;
+  }
+
+  .kata-kata small {
+    font-size: 3vw;
+  }
+
+  .addres {
+    margin-top: 4vw;
+  }
+
+  .addres h3 {
+    font-size: 4vw;
+  }
+
+  .addres p {
+    font-size: 3vw;
+  }
+
+  .addres span {
+    font-size: 4vw;
+    margin-right: 3vw;
+  }
+
+  #alamat {
+    padding-left: 7vw;
+  }
+
+  .card-produk {
+    padding-bottom: 5vw;
+  }
+
+  .pic {
+    width: 45%;
+  }
+
+  .merk {
+    font-size: 3.5vw;
+  }
+
+  .nama {
+    font-size: 4vw;
+  }
+
+  .ukuran {
+    font-size: 3vw;
+    margin-bottom: 0.5vw;
+  }
+
+  .qty {
+    font-size: 3dvw;
+  }
+
+  .jdl {
+    font-size: 3.5vw;
+  }
+
+  .rincian {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    font-size: 3.5vw;
+  }
+
+  .pembayaran a {
+    font-size: 4vw;
+  }
+
+  .total {
+    margin-top: 3vw;
+  }
+}

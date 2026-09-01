@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS khusus halaman "berhasil" (konfirmasi pembayaran) -->
+    <link rel="stylesheet" href="/css/berhasil.css">
+    <!-- CSS untuk navbar (meski navbar penuh tidak dipakai di halaman ini) -->
+    <link rel="stylesheet" href="/css/nav.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <title>
+        succes
+    </title>
+</head>
+
+<body>
+    <!-- Section konfirmasi pembayaran berhasil -->
+    <section class="pembayaran">
+        <!-- Ikon centang (tanda pembayaran sukses) -->
+        <div class="icon-berhasil">
+            <span class="material-symbols-outlined">done</span>
+        </div>
+        <!-- Pesan konfirmasi -->
+        <div class="kata-kata">
+            <p>PAYMENT SUCCESSFUL</p>
+            <small>Your payment has been processed. </small>
+
+        </div>
+        <!-- Ringkasan detail belanja: alamat pengiriman & rincian produk -->
+        <div class="detail-belanja">
+            <!-- Informasi pengiriman (diisi otomatis via JS/berhasil.js dari data user tersimpan) -->
+            <div class="addres">
+                <h3>Shipping to :</h3>
+                <div class="namaUsr">
+                    <span class="material-symbols-outlined">person</span>
+                    <p id="namaUsr"></p>
+                </div>
+
+                <div class="wa">
+                    <span class="material-symbols-outlined">phone</span>
+                    <p id="whatsapp"></p>
+                </div>
+
+                <div class="email">
+                    <span class="material-symbols-outlined">email</span>
+                    <p id="email"></p>
+                </div>
+
+                <div class="alamat">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <p id="alamat"></p>
+                </div>
+            </div>
+
+            <p class="jdl">Detail Product</p>
+            
+            <!-- Container daftar produk yang berhasil dibeli (diisi otomatis via JS) -->
+            <div class="bungkus-card">
+            </div>
+            <!-- Rincian biaya: subtotal, ongkir, total (diisi otomatis via JS) -->
+            <div class="rincian">
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <p id="subtotal"></p>
+                </div>
+                <div class="ongkir">
+                    <p>Shipping</p>
+                    <p id="shipping"></p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p id="total"></p>
+                </div>
+            </div>
+            <!-- Tombol kembali ke halaman shop -->
+            <a id="tombol" href="/html/shop.html">Back to menu</a>
+    </section>
+
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk menampilkan ringkasan pesanan & membersihkan data checkout -->
+    <script src="/js/berhasil.js"></script>
+</body>
+
+</html>

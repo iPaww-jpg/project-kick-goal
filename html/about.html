@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- Favicon halaman -->
+    <link rel="icon" href="../KICK%20%26%20GOAL/logo_saja.png">
+    <!-- CSS untuk navbar & footer -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <!-- CSS khusus halaman about -->
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font utama (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font untuk teks bergaya elegan/italic (Playfair Display) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Font ikon (Material Symbols) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+    <!-- Navbar atas (desktop) -->
+    <nav>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="/KICK & GOAL/logo_tulisan_samping.png" alt="">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li id="hide"><a href="../index.html">HOME</a></li>
+                <li id="hide"><a href="shop.html">SHOP</a></li>
+                <li id="hide" class="on"><a href="about.html">ABOUT</a></li>
+                <li id="hide"><a href="contact.html">CONTACT</a></li>
+                <!-- Tombol toggle dark/light mode -->
+                <li><button>
+                        <div class="dark-mode">
+                            <span class="material-symbols-outlined">dark_mode</span>
+                        </div>
+                    </button></li>
+                <!-- Ikon keranjang belanja + badge jumlah item (diisi via JS) -->
+                <li>
+                    <a href="keranjang.html">
+                        <div class="keranjang">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <div class="notif">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navbar bawah, khusus tampilan mobile -->
+    <nav class="bottom">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="material-symbols-outlined">home</span><br>
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html">
+                    <span class="material-symbols-outlined">storefront</span><br>
+                    SHOP
+                </a>
+            </li>
+
+            <!-- Menu ABOUT ditandai aktif karena ini halaman aktif saat ini -->
+            <li class="on">
+                <a href="about.html">
+                    <span class="material-symbols-outlined">info</span><br>
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    <span class="material-symbols-outlined">contact_page</span><br>
+                    CONTACT
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Section utama halaman about -->
+    <section class="about">
+        <h1>ABOUT US</h1>
+        <div class="isi">
+            <!-- Gambar/logo brand -->
+            <div class="pic">
+                <img src="/KICK & GOAL/logo_saja.png" alt="">
+            </div>
+            <!-- Teks deskripsi tentang brand -->
+            <div class="kata-kata">
+                <h3>ELEVATE YOUR GAME.</h3>
+                <p>At <span id="kickgoal">KICK & GOAL</span> , we believe the right footwear is more than just
+                    equipment. It is part of every
+                    movement, every touch, and every moment on the court. </p>
+                <p>We bring together futsal footwear that combines performance, comfort, control, and style — designed
+                    to help you move with confidence and play at your best.</p>
+                <b>Built for every move. <br>
+                    Made for your game.</b><br>
+                <p id="kickgoal">- KICK GOAL</p>
+                <a href="shop.html">EXPLORE THE COLLECTION →</a>
+            </div>
+        </div>
+        <!-- Bagian ucapan terima kasih, bisa dibuka/tutup (collapsible) -->
+        <details>
+            <summary>THANKS FOR DIVDIK PUB AKT 23</summary>
+
+            <div class="divdik">
+                <div class="fto">
+                    <img src="/KICK & GOAL/ChatGPT Image Sep 1, 2026, 11_10_03 AM.png" alt="">
+                </div>
+                <div class="kata">
+                    <h2>TERIMA KASIH <br> <span id="kickgoal">DIVISI PENDIDIKAN DAN PELATIHAN</span></h2>
+                    <p>Terima kasih atas ilmu, waktu, dan dedikasi yang telah diberikan selama proses pembelajaran.
+                        <br><br>
+
+                        Mulai dari memahami Logika dan Algoritma, mempelajari Struktur Data, hingga berkembang ke HTML
+                        dan pemrograman web, setiap materi yang diajarkan telah menjadi bagian penting dalam perjalanan
+                        kami untuk memahami dunia pemrograman. <br><br>
+
+                        Bukan hanya tentang menulis kode, tetapi juga tentang bagaimana berpikir secara logis,
+                        memecahkan masalah, dan terus belajar untuk menjadi lebih baik. <br><br>
+
+                        Terima kasih telah membimbing, mengajarkan, dan menemani setiap proses kami. <br><br>
+
+                        Terima kasih atas segala jasa dan dedikasinya.
+                        Ilmu yang diberikan akan selalu menjadi bekal untuk langkah kami selanjutnya. <br><br>
+
+                        — Terima Kasih, Divisi Pendidikan dan Pelatihan.</p>
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <!-- Footer: logo, slogan, menu navigasi, sosial media, dan copyright -->
+    <footer>
+        <div class="foto">
+            <img src="/KICK & GOAL/logo_tulisan_bawah.png" alt="">
+        </div>
+        <div class="slogan">
+            <p>ELEVATE YOUR GAME</p>
+            <small>Premium futsal footwear engineered for every move.</small>
+        </div>
+        <div class="fot-menu">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="medsos">
+            <P>Follow Us :</P>
+            <ul>
+                <li><a href="https://wa.me/6283130835478" target="_blank">WHATSAPP</a></li>
+                <li><a href="https://tiktok.com/@ipww__" target="_blank">TIKTOK</a></li>
+                <li><a href="https://instagram.com/ipaww__" target="_blank">INSTAGRAM</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 KICK & GOAL. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script untuk toggle dark/light mode -->
+    <script src="/js/mode.js"></script>
+    <!-- Script untuk sistem notifikasi -->
+    <script src="/js/notif.js"></script>
+
+</body>
+
+</html>
