@@ -277,6 +277,7 @@ form label {
 
     .info-produk {
         width: 90%;
+        margin-top: 5vw;
     }
 
     .produk {
@@ -298,7 +299,7 @@ form label {
     }
 
     .ukuran {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .harga {
@@ -376,10 +377,10 @@ form label {
     .subtotal,
     .shipping,
     .total {
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
 
     #buy {
-        font-size: 4vw;
+        font-size: 6vw;
     }
 }

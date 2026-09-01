@@ -115,12 +115,15 @@ fetch(api)
         // Fungsi untuk mencentang/melepas centang semua checkbox produk sekaligus
         function selectAll() {
             let semuaCheckbox = document.querySelectorAll(".check-produk");
+            let checked = this.checked;
 
             semuaCheckbox.forEach(checkbox => {
-                checkbox.checked = this.checked;
                 // Jalankan ulang logika pilih produk untuk tiap checkbox, seolah-olah diklik manual
                 pilihProduk.call(checkbox);
+                checkbox.checked = checked;
             });
+
+            select.checked = checked;
         }
 
         // Ambil elemen tombol "bayar" dan arahkan ke halaman checkout
@@ -164,6 +167,22 @@ fetch(api)
 
             // Hitung ulang subtotal setiap kali pilihan berubah
             updateTotal()
+            syncSelectAll();
+        }
+
+        // Sinkronkan status checkbox "select all" berdasarkan checkbox produk
+        function syncSelectAll() {
+            let semuaCheckbox = document.querySelectorAll(".check-produk");
+            let select = document.getElementById('select-all');
+
+            if (semuaCheckbox.length === 0) {
+                select.checked = false;
+                return;
+            }
+
+            // Cek apakah SEMUA checkbox produk sedang tercentang
+            let semuaTercentang = Array.from(semuaCheckbox).every(cb => cb.checked);
+            select.checked = semuaTercentang;
         }
 
         // Dijalankan saat tombol "bayar" diklik, sebelum pindah ke halaman checkout
@@ -236,6 +255,8 @@ fetch(api)
             localStorage.setItem("co", JSON.stringify(produkDipilih));
             updateTotal();
             updateNotif()
+            syncSelectAll();
+            tampilNotif("Product removed from cart.", "berhasil");
         }
 
         // Update angka notifikasi jumlah item di ikon keranjang (navbar)

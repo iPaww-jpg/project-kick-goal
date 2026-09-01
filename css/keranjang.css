@@ -189,7 +189,7 @@ input[type="checkbox"] {
     }
 
     .judul {
-        font-size: 4vw;
+        font-size: 5.5vw;
     }
 
     .isi {
@@ -197,9 +197,9 @@ input[type="checkbox"] {
     }
 
     .cek {
-        font-size: 2.3vw;
-        width: 24vw;
-        height: 5vw;
+        font-size: 3.5vw;
+        width: 40vw;
+        height: 9vw;
         margin-bottom: 5vw;
     }
 
@@ -208,7 +208,7 @@ input[type="checkbox"] {
     }
 
     .summary {
-        width: 35%;
+        width: 100%;
     }
 
     .pic {
@@ -221,20 +221,19 @@ input[type="checkbox"] {
     }
 
     .merk {
-        font-size: 3vw;
+        font-size: 4.5vw;
     }
 
     .nama {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .ukuran {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .harga {
-        font-size: 4vw;
-        margin-top: 5vw;
+        font-size: 5.5vw;
     }
 
     .summary {
@@ -244,24 +243,24 @@ input[type="checkbox"] {
 
     .summary a {
         margin: auto;
-        font-size: 3vw;
+        font-size: 4.2vw;
     }
 
     .total {
         padding: 3vw 4vw;
-        font-size: 4vw;
+        font-size: 4.5vw;
     }
 
     .order {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     input[type="checkbox"] {
-        width: 3vw;
-        height: 3vw;
+        width: 5vw;
+        height: 5vw;
     }
 
     .kosong {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 }
