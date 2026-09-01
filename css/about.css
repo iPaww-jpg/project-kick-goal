@@ -180,7 +180,7 @@ summary {
 
     /* Blok teks (.kata): ukuran font diperbesar, rata tengah, dan diberi jarak atas untuk mobile */
     .kata {
-      font-size: 3vw;
+      font-size: 4vw;
       text-align: center;
       margin-top: 3vw;
     }

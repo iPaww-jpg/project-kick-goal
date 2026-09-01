@@ -236,7 +236,7 @@
 .identitas input {
     margin-bottom: 1vw;
     width: 80%;
-    height: 2vw;
+    height: 3vw;
     padding-left: 1vw;
     border-radius: 1vw;
     border-color: var(--champagne);
@@ -306,7 +306,7 @@ form label {
     }
 
     .qty {
-        font-size: 3vw;
+        font-size: 4vw;
         gap: 2vw;
     }
 
@@ -315,12 +315,12 @@ form label {
     }
 
     .tombol button {
-        width: 5vw;
-        height: 5vw;
+        width: 6vw;
+        height: 6vw;
     }
 
     .subtotal-item {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .addres p {
@@ -328,10 +328,10 @@ form label {
     }
 
     .identitas input {
-        height: 7vw;
+        height: 10vw;
         width: 95%;
         padding-left: 3vw;
-        font-size: 3vw;
+        font-size: 3.5vw;
         margin-bottom: 3vw;
     }
 
@@ -346,7 +346,7 @@ form label {
     }
 
     form label {
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
 
     .addres textarea {
